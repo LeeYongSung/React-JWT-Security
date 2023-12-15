@@ -83,7 +83,9 @@ public class UserController {
         } 
     }
 
-
+    /**
+     * 회원수정
+     */
     @PutMapping("")
     public ResponseEntity<?> update(@RequestBody Users user) throws Exception {
         log.info("[PUT] - /users");
@@ -99,8 +101,12 @@ public class UserController {
         } 
     }
     
-
-    
+    /**
+     * 회원삭제 (회원탈퇴)
+     * @param userId
+     * @return
+     * @throws Exception
+     */
     @DeleteMapping("/{userId}")
     public ResponseEntity<?> destroy(@PathVariable("userId") String userId) throws Exception {
         log.info("[DELETE] - /users/{userId}");
@@ -117,6 +123,4 @@ public class UserController {
         }
         
     }
-    
-    
 }
